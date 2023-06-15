@@ -12,6 +12,26 @@
 <link rel="stylesheet" href="css/site.css" type="text/css" />
 <title>User Registrations</title>
 </head>
+<style>
+	table {
+		font-family: Quicksand, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 14px;
+	}
+
+	thead{
+		background-color: deepskyblue;
+		color: white;
+		font-family: 'quicksand', sans-serif;
+		font-weight: bold;
+	}
+</style>
 <body>
 	<div id="layout">
 		<div id="banner">
@@ -87,8 +107,6 @@
 									<td>ID</td>
 									<td>Name</td>
 									<td>Email</td>
-									<td>Role</td>
-									<td>Check User</td>
 								</tr>
 							</thead>
 							<tbody>

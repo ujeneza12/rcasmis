@@ -68,5 +68,7 @@
             </tr>
         </table>
     </form>
+    <a href="liststudents.php?page=students&&action=list">All students</a>
+
 </div>
 <%@ include file="footer.jsp"%>

@@ -20,6 +20,7 @@ public class Student extends Person implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "address_id")
+
 	private Address address;
 
 

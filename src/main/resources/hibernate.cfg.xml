@@ -6,7 +6,7 @@
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rcasmis</property>
 		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">myboyfriend</property>
+		<property name="hibernate.connection.password"></property>
 		
 		<property name="hibernate.session_factory_name">SmisSessionFactory</property>
 		<property name="hibernate.connection.pool_size">1</property>
@@ -40,5 +40,6 @@
 		<mapping class="rw.ac.rca.webapp.orm.AcademicYear" />
 		<mapping class="rw.ac.rca.webapp.orm.User" />
 		<mapping class="rw.ac.rca.webapp.orm.Mark" />
+		<mapping class="rw.ac.rca.webapp.orm.Parent" />
 	</session-factory>
 </hibernate-configuration>

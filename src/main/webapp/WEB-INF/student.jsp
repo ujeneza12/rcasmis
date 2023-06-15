@@ -12,11 +12,32 @@
     <link rel="stylesheet" href="css/site.css" type="text/css" />
     <title>User Registrations</title>
 </head>
+
+<style>
+    table {
+        font-family: Quicksand, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 14px;
+    }
+
+    thead{
+        background-color: deepskyblue;
+        color: white;
+        font-family: 'quicksand', sans-serif;
+        font-weight: bold;
+    }
+</style>
 <body>
 <div id="layout">
     <div id="banner">
         <div class="bannerlogo"></div>
-        <div class="text_header">Student registrations</div>
+        <div class="text_header">Student Info</div>
         <div class="right" style="text-align: right;">
             <c:if test="${authenticatedUser !=null}">
                 <b> <a
@@ -42,23 +63,23 @@
 
             <div class="options">
 
-                <a href="createstudent.php?page=createstudent"><button>
-                    <img src="icons/user_add.png" /> New Student Registration
+                <a href="createstudent.php?page=createmark"><button>
+                    <img src="icons/application_view_columns.png" /> Student Reg
                 </button></a>
             </div>
-
             <div class="search">
                 <form action="liststudents.php" method="get">
                     <table>
                         <tr>
-                            <td style="color: #000000;">Enter User ID</td>
-                            <input type="text" name="id" id="id" />
-                            <input type='submit' name="studentregistrationsearch"
-                                   value='search' />
+                            <td style="color: #000000;">Enter student ID</td>
+                            <td><input type="text" name="id" id="id" /></td>
+                            <td><input type='submit' name="studentregistrationsearch"
+                                       value='search' /></td>
                         </tr>
                     </table>
                 </form>
             </div>
+            <hr />
 
             <form action="liststudents.php?page=statusapproval" method="post" class="form-group">
 

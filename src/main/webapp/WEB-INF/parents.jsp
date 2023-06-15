@@ -6,11 +6,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"/>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="cssfile.css" type="text/css" />
     <link rel="stylesheet" href="css/displaytag.css" type="text/css" />
     <link rel="stylesheet" href="css/screen.css" type="text/css" />
     <link rel="stylesheet" href="css/site.css" type="text/css" />
-    <title>Marks Registrations</title>
+    <title>Parent Details</title>
 </head>
 
 <style>
@@ -34,10 +35,10 @@
     }
 </style>
 <body>
-<div id="layout">
+<div id="layout" class="container" style="padding-top: 16px; ">
     <div id="banner">
         <div class="bannerlogo"></div>
-        <div class="text_header">Marks Info for std</div>
+        <div class="text_header">Parents Information</div>
         <div class="right" style="text-align: right;">
             <c:if test="${authenticatedUser !=null}">
                 <b> <a
@@ -53,66 +54,61 @@
                 </div>
             </c:if>
         </div>
+
     </div>
-    <div>
+
+    <div class="left" style="text-align: left; ">
         <%@ include file="menu.jsp"%>
     </div>
+
     <div id="middle">
         <c:if test="${authenticatedUser !=null}">
             <div class="options">
 
-                <a href="createmark.php?page=createmark"><button>
-                    <img src="icons/application_view_columns.png" /> Marks
+                <a href="createparent.php?page=createmark"><button>
+                    <img src="icons/application_view_columns.png" /> Parent
                 </button></a>
             </div>
             <div class="search">
-                <form action="listmarks.php" method="get">
+                <form action="listparents.php" method="get">
                     <table>
                         <tr>
-                            <td style="color: #000000;">Enter mark ID</td>
+                            <td style="color: #000000;">Enter parent ID</td>
                             <td><input type="text" name="id" id="id" /></td>
-                            <td><input type='submit' name="courseregistrationsearch"
+                            <td><input type='submit' name="parentregistrationsearch"
                                        value='search' /></td>
                         </tr>
                     </table>
                 </form>
             </div>
             <hr />
-            <form action="listmarks.php?page=statusapproval" method="post">
-                <fieldset>
-                    <legend> Marks Registration Approval Status </legend>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Firstname</td>
+                        <td>Lastname</td>
+                        <td>Gender </td>
+                        <td>Phone Number</td>
+                        <td colspan="2" rowspan="1">Operation </td>
+                    </tr>
+                    </thead>
 
-                    <table style="border: 0;">
+                    <tbody>
+                    <c:forEach items="${parents}" var="prt" varStatus="prtstatus">
                         <tr>
-                            <td align="left"><input type="text" size="15"
-                                                    maxlength="50" readonly="readonly" name="savedBy" id="savedBy"
-                                                    hidden="hidden" value="${authenticatedUser.id}" /></td>
+                            <td>${prt.getId()}</td>
+                            <td>${prt.getFirstName()}</td>
+                            <td>${prt.getLastName()}</td>
+                            <td>${prt.getGender()}</td>
+                            <td>${prt.getPhoneNumber()}</td>
 
+                            <td><a href="editparent.php?page=editparent">Edit</a></td>
+                            <td><a href="deleteparent.php?page=deleteparent">Delete</a></td>
                         </tr>
-                    </table>
-
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>ID</td>
-                            <td>studentName</td>
-                            <td>subject</td>
-                            <td>Marks</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach items="${marks}" var="mark" varStatus="markstatus">
-                            <tr>
-                                <td>${mark.getId()}</td>
-                                <td>${mark.getStudentName()}</td>
-                                <td>${mark.getSubject()}</td>
-                                <td>${mark.getMarksObtained()}</td>
-
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                </fieldset>
+                    </c:forEach>
+                    </tbody>
+                </table>
             </form>
         </c:if>
     </div>

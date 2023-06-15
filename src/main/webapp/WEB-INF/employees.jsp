@@ -10,13 +10,33 @@
   <link rel="stylesheet" href="css/displaytag.css" type="text/css" />
   <link rel="stylesheet" href="css/screen.css" type="text/css" />
   <link rel="stylesheet" href="css/site.css" type="text/css" />
-  <title>User Registrations</title>
+  <title>Employee Details</title>
 </head>
+<style>
+  table {
+    font-family: Quicksand, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 14px;
+  }
+
+  thead{
+    background-color: deepskyblue;
+    color: white;
+    font-family: 'quicksand', sans-serif;
+    font-weight: bold;
+  }
+</style>
 <body>
 <div id="layout">
   <div id="banner">
     <div class="bannerlogo"></div>
-    <div class="text_header">Student registrations</div>
+    <div class="text_header">Employee registrations</div>
     <div class="right" style="text-align: right;">
       <c:if test="${authenticatedUser !=null}">
         <b> <a

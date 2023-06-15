@@ -12,6 +12,26 @@
     <link rel="stylesheet" href="css/site.css" type="text/css" />
     <title>Course Registrations</title>
 </head>
+<style>
+    table {
+        font-family: Quicksand, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 14px;
+    }
+
+    thead{
+        background-color: deepskyblue;
+        color: white;
+        font-family: 'quicksand', sans-serif;
+        font-weight: bold;
+    }
+</style>
 <body>
 <div id="layout">
     <div id="banner">
@@ -76,6 +96,8 @@
                             <td>ID</td>
                             <td>CourseName</td>
                             <td>CourseCode</td>
+                            <td>Star Date</td>
+                            <td>End Date</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -84,7 +106,8 @@
                                 <td>${course.getId()}</td>
                                 <td>${course.getName()}</td>
                                 <td>${course.getCode()}</td>
-
+                                <td>${course.getStart()}</td>
+                                <td>${course.getEnd()}</td>
                             </tr>
                         </c:forEach>
                         </tbody>

@@ -38,19 +38,19 @@
 		src="icons/application_side_expand.png" /> Reports</a>
 	<ul class="noJS">
 		<li><a
-			href="liststudents.php?page=reportsearch&&user_role=adm&&action=search"><img
+			href="studentReportTxt.php?page=studenttxt"><img
 				src="icons/application_view_list.png" /> Students reports</a></li>
 		<li><a
-			href="listcourses.php?page=reportcourses&&user_role=adm&&action=search"><img
+			href="courseReportTxt.php?page=coursetxt"><img
 				src="icons/application_view_list.png" /> Courses reports </a></li>
 		<li><a
-			href="listmarks.php?page=markssearch&&user_role=adm&&action=search"><img
+			href="marksReportTxt.php?page=markstxt"><img
 				src="icons/application_view_list.png" /> Marks Report</a></li>
 		<li><a
 			href="instructorspdf.php?"><img
 				src="icons/page_white_acrobat.png" /> All Instructors PDF</a></li>
 		<li><a
-			href="Studentspdf.php?"><img
+			href="studentReportPdf.php?page= studenttxt"><img
 				src="icons/page_white_acrobat.png" /> All Students PDF</a></li>
 	
 	</ul></li>
